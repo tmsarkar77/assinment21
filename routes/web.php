@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 //routing page
+Route::get('/dashboard',[HomeController::class,'dashboard'])->name('dashboard');
 Route::get('/login',[HomeController::class,'loginPage'])->name('login');
 Route::get('/register',[HomeController::class,'registerPage'])->name('registerPage');
 Route::get('/sendOtpToUserEmail',[HomeController::class,'sendOtpToUserEmail'])->name('sendOtpToUserEmail');

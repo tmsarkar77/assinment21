@@ -40,11 +40,11 @@ class UserController extends Controller
 
     function UserLogin(Request $request){
 
-        $count =  User::where('email','=',$request->input('email'))
+        $counts =  User::where('email','=',$request->input('email'))
         ->where('password','=',$request->input('password'))
         ->count();
-
-        if($count==1){
+    
+        if($counts==1){
             $token = JWTToken::CreateToken($request->input('email'));
             return response()->json([
                 'status'=>'success',

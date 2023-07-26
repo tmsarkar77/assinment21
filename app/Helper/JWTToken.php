@@ -35,7 +35,7 @@ class JWTToken{
                return $decoded->email;
               
             }catch(Exception $e){
-                return 'Unothorize';
+                return 'unothorize';
             }
 
            

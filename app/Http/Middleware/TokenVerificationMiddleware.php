@@ -19,20 +19,19 @@ class TokenVerificationMiddleware
     {
         $token = $request->header('token');
         $result = JWTToken::VrerifyToken($token);
-       
-        if($result==="Unothorize"){
+
+        if($result=="unothorize"){
 
             return response()->json([
-                'status'=>'failed',
+                'status'=>'failedd',
                 'message' => 'Unothorize'
                 ],status:401);
 
         }else{
 
-           $re = $request->headers()->set('email',$result);
-          
+            $request->headers->set('email',$result);
             return $next($request);
-            print_r($re);
+           
         }
       
     }
